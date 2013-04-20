@@ -20,6 +20,6 @@ for key, gateReader in pairs(gateReaders) do
   print("== "..gateReaderSides[key].." ==")
   
   for name, value in pairs(gateReader.get()) do
-    print(name..": "..value)
+    print(name..": "..tostring(value))
   end
 end

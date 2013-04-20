@@ -22,7 +22,15 @@ print("Got a "..kind.." cart ["..id.."]")
 
 for name, value in pairs(data) do
   if type(value) == "table" then
-    print(name..": "..table.concat(value, ", "))
+    if value[1] == nil then
+      states = ""
+      for k, v in pairs(value) do
+        if v then states = states..", "..k end
+      end
+      return states:sub(3)
+    else
+      print(name..": "..table.concat(value, ", "))
+    end
   else
     print(name..": "..tostring(value))
   end
